@@ -1,0 +1,29 @@
+
+<!-- using bootstrap for good design error messages -->
+
+<% layout("/layouts/boilerplate") %>
+
+<div class="row mt-3">
+    <div class="alert alert-danger col-6 offset-3" role="alert">
+        <!-- for icons -->
+        <!-- <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg> -->
+        <h4 class="alert-heading"><%= err.message %></h4>
+        <!--err.stacK (NOT PREFERABLE)shows the line of codes where error has been occurred-->
+    </div>
+</div>
+
+
+
+<!-- NOTE:- SCHEMA VALIDATION PART, IF WE TRY TO ADD NEW LISTING WITHOUT ENTERING ALL DETAILS VIA HOPPSCOTCH POST METHOD
+ THEN THE LISTING WILL GET ADDED, WITH INCOMPLETE INFO. 
+ SO, WE NEED TO ADD VALIDATION FOR EACH FIELD...
+ 
+ 2 WAYS
+FIRST- if (!NEWLISTING.TITLE){
+    throw new ExpressError(400, "Send valid data for listing");
+}.....HAVE TO WRITE THIS LINE SEVERAL TIMES FOR EACH FIELD(VERY COMPLEX & LENGTHY CODE)
+
+SECOND- USE JOI.DEV TOOL FOR VALIDATION
+-->
+
+
